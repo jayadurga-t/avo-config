@@ -21,11 +21,20 @@ spring:
           clone-on-start: true
           force-pull: true
 
+  # in config server, rabbitmq configuration should be done
+  # while configuring the spring cloud config monitor and webhook,
+  # not needed while configuring spring cloud bus
   rabbitmq:
-    localhost: "localhost"
+    host: "localhost"
     port: 5672
     username: "guest"
     password: "guest"
 
 encrypt:
   key: "2026Feb14Sat@14:00"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
