@@ -24,11 +24,15 @@ spring:
   # in config server, rabbitmq configuration should be done
   # while configuring the spring cloud config monitor and webhook,
   # not needed while configuring spring cloud bus
-  rabbitmq:
-    host: "localhost"
-    port: 5672
-    username: "guest"
-    password: "guest"
+#  rabbitmq:
+#    host: "localhost"
+#    port: 5672
+#    username: "guest"
+#    password: "guest"
+
+  metrics:
+    tags:
+      application: ${spring.application.name}
 
 encrypt:
   key: "2026Feb14Sat@14:00"
